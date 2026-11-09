@@ -1,0 +1,261 @@
+{
+  "description": "Inputs and process-control instructions for demonstrations. These are not saved answers or measured results. Implement your runner, or replay events manually and record the commands.",
+  "scenarios": [
+    {
+      "id": "S01",
+      "part": 1,
+      "title": "Simple Wi-Fi route",
+      "status_profile": "normal",
+      "reset_before": true,
+      "events": [
+        {
+          "action": "message",
+          "user_id": "demo-user-a",
+          "thread_id": "s01",
+          "message": "I cannot connect to Wi-Fi."
+        }
+      ]
+    },
+    {
+      "id": "S02",
+      "part": 1,
+      "title": "Case-insensitive password route",
+      "status_profile": "normal",
+      "reset_before": true,
+      "events": [
+        {
+          "action": "message",
+          "user_id": "demo-user-a",
+          "thread_id": "s02",
+          "message": "I forgot my PASSWORD."
+        }
+      ]
+    },
+    {
+      "id": "S03",
+      "part": 1,
+      "title": "Unsupported request",
+      "status_profile": "normal",
+      "reset_before": true,
+      "events": [
+        {
+          "action": "message",
+          "user_id": "demo-user-a",
+          "thread_id": "s03",
+          "message": "My laptop screen is broken."
+        }
+      ]
+    },
+    {
+      "id": "S04",
+      "part": 1,
+      "title": "Two topics before the graph change",
+      "graph_variant": "original",
+      "status_profile": "normal",
+      "reset_before": true,
+      "events": [
+        {
+          "action": "message",
+          "user_id": "demo-user-a",
+          "thread_id": "s04",
+          "message": "My Wi-Fi password does not work."
+        }
+      ]
+    },
+    {
+      "id": "S05",
+      "part": 1,
+      "title": "Two topics after adding clarification",
+      "graph_variant": "with_clarification",
+      "status_profile": "normal",
+      "reset_before": true,
+      "events": [
+        {
+          "action": "message",
+          "user_id": "demo-user-a",
+          "thread_id": "s05",
+          "message": "My Wi-Fi password does not work."
+        }
+      ]
+    },
+    {
+      "id": "S06",
+      "part": 2,
+      "title": "Instructions then local ticket",
+      "status_profile": "normal",
+      "reset_before": true,
+      "events": [
+        {
+          "action": "message",
+          "user_id": "demo-user-a",
+          "thread_id": "s06",
+          "message": "Show me the Wi-Fi troubleshooting steps."
+        },
+        {
+          "action": "message",
+          "user_id": "demo-user-a",
+          "thread_id": "s06",
+          "message": "I enabled Wi-Fi and forgot the saved network, but Campus-Demo still will not connect. Check whether Wi-Fi is down. If it is operating, prepare a ticket about this problem."
+        }
+      ]
+    },
+    {
+      "id": "S07",
+      "part": 2,
+      "title": "The same request during a Wi-Fi outage",
+      "status_profile": "wifi_outage",
+      "reset_before": true,
+      "events": [
+        {
+          "action": "message",
+          "user_id": "demo-user-a",
+          "thread_id": "s07",
+          "message": "I enabled Wi-Fi and forgot the saved network, but Campus-Demo still will not connect. Check whether Wi-Fi is down. If it is operating, prepare a ticket about this problem."
+        }
+      ]
+    },
+    {
+      "id": "S08",
+      "part": 2,
+      "title": "Status source unavailable",
+      "status_profile": "status_unavailable",
+      "reset_before": true,
+      "events": [
+        {
+          "action": "message",
+          "user_id": "demo-user-a",
+          "thread_id": "s08",
+          "message": "Check whether Wi-Fi is down. If it is operating, prepare a ticket. I already enabled Wi-Fi and reconnected, with no success."
+        }
+      ]
+    },
+    {
+      "id": "S09",
+      "part": 2,
+      "title": "Missing ticket details",
+      "status_profile": "normal",
+      "reset_before": true,
+      "events": [
+        {
+          "action": "message",
+          "user_id": "demo-user-a",
+          "thread_id": "s09",
+          "message": "Prepare a support ticket."
+        },
+        {
+          "action": "message",
+          "user_id": "demo-user-a",
+          "thread_id": "s09",
+          "message": "The issue is Wi-Fi. I enabled it and tried reconnecting, but it still fails."
+        }
+      ]
+    },
+    {
+      "id": "S10",
+      "part": 3,
+      "title": "Use the current conversation",
+      "status_profile": "normal",
+      "reset_before": true,
+      "events": [
+        {
+          "action": "message",
+          "user_id": "demo-user-a",
+          "thread_id": "s10",
+          "message": "I cannot connect to Wi-Fi. I enabled it and forgot the saved network, but reconnecting failed."
+        },
+        {
+          "action": "message",
+          "user_id": "demo-user-a",
+          "thread_id": "s10",
+          "message": "Which steps did I already try?"
+        }
+      ]
+    },
+    {
+      "id": "S11",
+      "part": 3,
+      "title": "Persist and recall after restart",
+      "status_profile": "normal",
+      "reset_before": true,
+      "events": [
+        {
+          "action": "message",
+          "user_id": "demo-user-a",
+          "thread_id": "restart-a",
+          "message": "Please remember that I prefer replies in Kazakh. My issue is Wi-Fi. I enabled it and tried reconnecting, but it still fails."
+        },
+        {
+          "action": "restart_process",
+          "preserve_local_storage": true
+        },
+        {
+          "action": "message",
+          "user_id": "demo-user-a",
+          "thread_id": "restart-a",
+          "message": "Which problem and steps did we discuss?"
+        }
+      ]
+    },
+    {
+      "id": "S12",
+      "part": 3,
+      "title": "Preference across threads without replay",
+      "status_profile": "normal",
+      "reset_before": true,
+      "events": [
+        {
+          "action": "message",
+          "user_id": "demo-user-a",
+          "thread_id": "preference-a1",
+          "message": "Please remember that I prefer replies in Kazakh. I have a Wi-Fi problem."
+        },
+        {
+          "action": "restart_process",
+          "preserve_local_storage": true
+        },
+        {
+          "action": "message",
+          "user_id": "demo-user-a",
+          "thread_id": "preference-a2",
+          "message": "Which language did I ask you to use? What can you help with?"
+        }
+      ]
+    },
+    {
+      "id": "S13",
+      "part": 3,
+      "title": "Do not share memory between users",
+      "status_profile": "normal",
+      "reset_before": true,
+      "events": [
+        {
+          "action": "message",
+          "user_id": "demo-user-a",
+          "thread_id": "isolation-a",
+          "message": "Please remember that I prefer replies in Kazakh. I have a Wi-Fi problem."
+        },
+        {
+          "action": "message",
+          "user_id": "demo-user-b",
+          "thread_id": "isolation-b",
+          "message": "Have I told you a preferred language or a previous problem?"
+        }
+      ]
+    },
+    {
+      "id": "S14",
+      "part": 2,
+      "title": "Password recovery outage",
+      "status_profile": "recovery_outage",
+      "reset_before": true,
+      "events": [
+        {
+          "action": "message",
+          "user_id": "demo-user-a",
+          "thread_id": "s14",
+          "message": "My password recovery page is unavailable. Check the service status. Is there a known problem?"
+        }
+      ]
+    }
+  ]
+}

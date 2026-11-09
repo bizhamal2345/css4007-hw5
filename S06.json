@@ -1,0 +1,89 @@
+{
+    "scenario": "S06",
+    "status_profile": "normal",
+    "user_id": "demo-user-a",
+    "thread_id": "s06",
+    "trace": [
+        {
+            "node": "chatbot",
+            "type": "ai",
+            "content": "",
+            "tool_calls": [
+                {
+                    "name": "find_instructions",
+                    "args": {
+                        "topic": "Wi-Fi"
+                    },
+                    "id": "call_un647irNXH01FlX9XmKd8KlG",
+                    "type": "tool_call"
+                }
+            ]
+        },
+        {
+            "node": "tools",
+            "type": "tool",
+            "content": "Check that Wi-Fi is enabled and airplane mode is off.\nSelect the fictional Campus-Demo network.\nIf connection fails, forget the saved network and try connecting again.\nIf the problem remains, check the service status before preparing a ticket.",
+            "tool_name": "find_instructions"
+        },
+        {
+            "node": "chatbot",
+            "type": "ai",
+            "content": "Here are the Wi-Fi troubleshooting steps:\n1. Check that Wi-Fi is enabled and airplane mode is off.\n2. Select the fictional Campus-Demo network.\n3. If connection fails, forget the saved network and try connecting again.\n4. If the problem remains, check the service status before preparing a ticket."
+        },
+        {
+            "node": "chatbot",
+            "type": "ai",
+            "content": "",
+            "tool_calls": [
+                {
+                    "name": "check_service_status",
+                    "args": {
+                        "service": "wifi"
+                    },
+                    "id": "call_Kfa2k1M2J2v8923QsWp2y8Yb",
+                    "type": "tool_call"
+                }
+            ]
+        },
+        {
+            "node": "tools",
+            "type": "tool",
+            "content": "Status: operational\nMessage: The demo Wi-Fi service has no reported outage.",
+            "tool_name": "check_service_status"
+        },
+        {
+            "node": "chatbot",
+            "type": "ai",
+            "content": "",
+            "tool_calls": [
+                {
+                    "name": "prepare_ticket",
+                    "args": {
+                        "problem": "Campus-Demo Wi-Fi network will not connect despite enabling Wi-Fi and forgetting the saved network.",
+                        "steps_tried": [
+                            "Enabled Wi-Fi",
+                            "Forgot the saved network"
+                        ]
+                    },
+                    "id": "call_ECMtFrZ2BKSbORciJToAerYy",
+                    "type": "tool_call"
+                }
+            ]
+        },
+        {
+            "node": "tools",
+            "type": "tool",
+            "content": "Ticket draft saved: outputs/tickets/T-adebed82.json",
+            "tool_name": "prepare_ticket"
+        },
+        {
+            "node": "chatbot",
+            "type": "ai",
+            "content": "The Wi-Fi service is operational. I have prepared a support ticket for your issue with connecting to the Campus-Demo Wi-Fi network despite enabling Wi-Fi and forgetting the saved network."
+        }
+    ],
+    "ticket_files": [
+        "outputs/tickets/T-adebed82.json"
+    ],
+    "loop_limit_reached": false
+}

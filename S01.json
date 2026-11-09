@@ -1,0 +1,27 @@
+{
+    "scenario": "S01",
+    "message": "I cannot connect to Wi-Fi.",
+    "trace": [
+        {
+            "node": "read_request",
+            "state": {
+                "message": "I cannot connect to Wi-Fi.",
+                "category": "wifi",
+                "reply": ""
+            }
+        },
+        {
+            "node": "wifi_help",
+            "state": {
+                "message": "I cannot connect to Wi-Fi.",
+                "category": "wifi",
+                "reply": "Check that Wi-Fi is enabled and airplane mode is off.\nSelect the fictional Campus-Demo network.\nIf connection fails, forget the saved network and try connecting again.\nIf the problem remains, check the service status before preparing a ticket."
+            }
+        }
+    ],
+    "final_state": {
+        "message": "I cannot connect to Wi-Fi.",
+        "category": "wifi",
+        "reply": "Check that Wi-Fi is enabled and airplane mode is off.\nSelect the fictional Campus-Demo network.\nIf connection fails, forget the saved network and try connecting again.\nIf the problem remains, check the service status before preparing a ticket."
+    }
+}

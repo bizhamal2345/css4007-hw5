@@ -1,0 +1,15 @@
+{
+  "description": "Output shape for a local ticket draft. Null values are fields to fill from the conversation or tool results, not facts supplied by the dataset.",
+  "ticket": {
+    "ticket_id": null,
+    "status": "draft",
+    "user_id": null,
+    "thread_id": null,
+    "category": null,
+    "summary": null,
+    "steps_tried": [],
+    "service_status": null,
+    "status_profile": null,
+    "reference_ids": []
+  }
+}

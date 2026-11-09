@@ -1,0 +1,41 @@
+{
+    "scenario": "S12",
+    "user_id": "demo-user-a",
+    "language": "Kazakh",
+    "start_command": "python s12_memory.py start",
+    "restart_command": "python s12_memory.py resume",
+    "threads": {
+        "preference-a1": [
+            {
+                "type": "human",
+                "content": "Please remember that I prefer replies in Kazakh. I have a Wi-Fi problem."
+            },
+            {
+                "type": "ai",
+                "content": ""
+            },
+            {
+                "type": "tool",
+                "content": "Check that Wi-Fi is enabled and airplane mode is off.\nSelect the fictional Campus-Demo network.\nIf connection fails, forget the saved network and try connecting again.\nIf the problem remains, check the service status before preparing a ticket."
+            },
+            {
+                "type": "ai",
+                "content": "Wi-Fi мәселесін шешу үшін келесі қадамдарды орындаңыз:\n1. Wi-Fi қосулы екеніне және ұшақ режимі өшірілгеніне көз жеткізіңіз.\n2. \"Campus-Demo\" желісін таңдаңыз.\n3. Егер қосылу сәтсіз болса, сақталған желіні ұмытып, қайта қосылып көріңіз.\n4. Егер мәселе шешілмесе, қызметтің жұмыс жағдайын тексеріңіз.\n\nҚажет болса, қосымша көмек көрсету үшін хабарласыңыз."
+            }
+        ],
+        "preference-a2": [
+            {
+                "type": "human",
+                "content": "Which language did I ask you to use? What can you help with?"
+            },
+            {
+                "type": "ai",
+                "content": "Сіз маған қазақ тілінде жауап беруді сұрадыңыз. Мен университеттің IT қолдау қызметімін және Wi-Fi, парольді қалпына келтіру, қызметтің күйі және жергілікті қолдау билеттерін дайындау сияқты мәселелерде көмектесе аламын. Қалай көмектесе аламын?"
+            }
+        ]
+    },
+    "memory_source": {
+        "conversation": "SQLite checkpointer",
+        "language": "SQLite user preferences"
+    }
+}

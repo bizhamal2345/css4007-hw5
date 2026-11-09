@@ -1,0 +1,53 @@
+{
+  "description": "Fictional local data for the HW5 university IT helpdesk exercise. These are not the university's actual instructions or service status.",
+  "instructions": {
+    "wifi": {
+      "title": "Connect to the practice campus network",
+      "steps": [
+        "Check that Wi-Fi is enabled and airplane mode is off.",
+        "Select the fictional Campus-Demo network.",
+        "If connection fails, forget the saved network and try connecting again.",
+        "If the problem remains, check the service status before preparing a ticket."
+      ],
+      "instruction_id": "GUIDE-WIFI"
+    },
+    "password": {
+      "title": "Recover access to the practice account",
+      "steps": [
+        "Open the practice sign-in screen and choose Forgot password.",
+        "Follow the recovery instructions shown by the practice application.",
+        "If recovery is unavailable, prepare a ticket describing the error.",
+        "Never include a password or recovery code in a ticket."
+      ],
+      "instruction_id": "GUIDE-PASSWORD"
+    }
+  },
+  "topic_aliases": {
+    "wifi": [
+      "wifi",
+      "wi-fi"
+    ],
+    "password": [
+      "password"
+    ]
+  },
+  "topic_services": {
+    "wifi": "wifi",
+    "password": "account_recovery"
+  },
+  "scope": [
+    "Wi-Fi troubleshooting",
+    "Password recovery guidance",
+    "Service status lookup",
+    "Preparing local ticket drafts"
+  ],
+  "ticket_policy": {
+    "delivery": "local draft only",
+    "required_information": [
+      "problem description",
+      "steps already tried"
+    ],
+    "unknown_information": "Ask the user; do not invent missing details.",
+    "secret_information": "Do not request or store passwords, API keys or recovery codes."
+  }
+}

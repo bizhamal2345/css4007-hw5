@@ -1,62 +1,111 @@
-# HW5 — My LangGraph helpdesk
+# HW5 — My LangGraph Helpdesk
 
 ## Part 1 — How the graph works
 
 ### My graph and state
 
-TODO: draw the first graph and explain what each node reads and changes. Answer the four state and routing questions in the brief.
+Original graph:
+
+START -> read_request
+              |-> wifi_help -> END
+              |-> password_help -> END
+              |-> other_help -> END
+
+My state has three fields:
+- message: the original user message
+- category: the detected problem
+- reply: the answer to the user
+
+The read_request node reads the message and updates
+the category. The help nodes read the current state
+and return a reply using helpdesk.json.
+
+A node returns updates to the state. A conditional
+edge chooses which node to run next. It does not
+change the state.
+
+Each next node receives the current graph state,
+including updates from previous nodes.
+
+START is the entry point. END finishes the graph.
+Compiling creates a runnable graph.
 
 ### Predictions before running
 
-| Message | Predicted route | Actual route | What I learned |
+| Message | Predicted route | Actual route | Result |
 | --- | --- | --- | --- |
-| I cannot connect to Wi-Fi. | | | |
-| I forgot my PASSWORD. | | | |
-| My laptop screen is broken. | | | |
-| My Wi-Fi password does not work. | | | |
+| I cannot connect to Wi-Fi. | wifi_help | wifi_help | Correct |
+| I forgot my PASSWORD. | password_help | password_help | Correct |
+| My laptop screen is broken. | other_help | other_help | Correct |
+| My Wi-Fi password does not work. | wifi_help | wifi_help | Correct |
+
+All four predictions matched the actual results.
+
+The program converts messages to lowercase,
+so PASSWORD and password are treated equally.
+
+In the original graph, Wi-Fi has priority.
+When both topics are mentioned, wifi_help is selected
+because the Wi-Fi condition is checked first.
 
 ### My change to the graph
 
-TODO: draw the graph with clarify_problem, show the new trace, and explain the difference. What does LangGraph control, and what do my functions decide?
+Updated graph:
+
+START -> read_request
+              |-> wifi_help -> END
+              |-> password_help -> END
+              |-> other_help -> END
+              |-> clarify_problem -> END
+
+I added a new category called "both".
+
+If a message mentions Wi-Fi and password,
+the graph now uses clarify_problem.
+
+For S04, the original route was:
+START -> read_request -> wifi_help -> END
+
+For S05, the updated route was:
+START -> read_request -> clarify_problem -> END
+
+In S05, the category changed to "both".
+The assistant asked which problem to solve first.
+
+LangGraph controls the execution order and
+the transitions between nodes.
+
+My Python functions check the message,
+choose a category and create the answer.
+
+There is no LLM in Part 1.
+
+### Execution logs
+
+The actual results are saved in:
+- outputs/S01.json
+- outputs/S02.json
+- outputs/S03.json
+- outputs/S04.json
+- outputs/S05.json
+
+Each log shows the nodes visited and the
+state after each node.
 
 ## Part 2 — Model and tools
 
-TODO: draw the model/tool loop. Answer the four questions in the brief. Record the model and provider, direct calls to each tool, and one actual run that uses multiple tools. Explain the loop limit.
+To be completed after implementation.
 
 ## Part 3 — Memory
 
-TODO: explain conversation state, thread_id, user identifier, user preference storage, and retrieval from helpdesk.json.
-
-| Situation | Command used | Log file | What happened |
-| --- | --- | --- | --- |
-| Refer to an earlier message | | | |
-| Close, restart and resume | | | |
-| Same user, new conversation | | | |
-| Different user | | | |
+To be completed after implementation.
 
 ## Part 4 — Running and checking my work
 
-TODO: point to the README setup steps, package versions, memory-reset instructions, tests and GitHub Actions workflow. Explain which mistake each test catches and which runs use a fake model.
+To be completed after implementation.
 
 ## Choices and limitations
 
-TODO: explain the storage and libraries I chose, why they fit this task, and what still does not work reliably.
-
-## Supplied scenarios — my actual results
-
-| Scenario | Command or manual steps | Log file | What happened / what I changed |
-| --- | --- | --- | --- |
-| S01 — Simple Wi-Fi route | | | |
-| S02 — Case-insensitive password route | | | |
-| S03 — Unsupported request | | | |
-| S04 — Two topics before the graph change | | | |
-| S05 — Two topics after adding clarification | | | |
-| S06 — Instructions then local ticket | | | |
-| S07 — The same request during a Wi-Fi outage | | | |
-| S08 — Status source unavailable | | | |
-| S09 — Missing ticket details | | | |
-| S10 — Use the current conversation | | | |
-| S11 — Persist and recall after restart | | | |
-| S12 — Preference across threads without replay | | | |
-| S13 — Do not share memory between users | | | |
-| S14 — Password recovery outage | | | |
+Part 1 uses fixed Python rules, not an LLM.
+It supports Wi-Fi and password topics only.
+Other problems require clarification.

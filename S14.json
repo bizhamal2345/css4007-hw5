@@ -1,0 +1,38 @@
+{
+    "scenario": "S14",
+    "status_profile": "recovery_outage",
+    "user_id": "demo-user-a",
+    "thread_id": "s14",
+    "trace": [
+        {
+            "node": "input",
+            "message": "My password recovery page is unavailable. Check the service status. Is there a known problem?"
+        },
+        {
+            "node": "chatbot",
+            "answer": "",
+            "tool_calls": [
+                {
+                    "name": "check_service_status",
+                    "args": {
+                        "service": "account_recovery"
+                    },
+                    "id": "call_wZBZayJ0U9ayZPdfhXzEdHlg",
+                    "type": "tool_call"
+                }
+            ]
+        },
+        {
+            "node": "tools",
+            "tool": "check_service_status",
+            "result": "Status: outage\nMessage: The demo account-recovery service is unavailable. The fixture gives no repair time."
+        },
+        {
+            "node": "chatbot",
+            "answer": "The password recovery service is currently experiencing an outage and is unavailable. There is no estimated repair time provided at the moment. If you need assistance with something else or want instructions related to password recovery, please let me know.",
+            "tool_calls": []
+        }
+    ],
+    "ticket_files": [],
+    "loop_limit_reached": false
+}

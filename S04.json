@@ -1,0 +1,27 @@
+{
+    "scenario": "S04",
+    "message": "My Wi-Fi password does not work.",
+    "trace": [
+        {
+            "node": "read_request",
+            "state": {
+                "message": "My Wi-Fi password does not work.",
+                "category": "wifi",
+                "reply": ""
+            }
+        },
+        {
+            "node": "wifi_help",
+            "state": {
+                "message": "My Wi-Fi password does not work.",
+                "category": "wifi",
+                "reply": "Check that Wi-Fi is enabled and airplane mode is off.\nSelect the fictional Campus-Demo network.\nIf connection fails, forget the saved network and try connecting again.\nIf the problem remains, check the service status before preparing a ticket."
+            }
+        }
+    ],
+    "final_state": {
+        "message": "My Wi-Fi password does not work.",
+        "category": "wifi",
+        "reply": "Check that Wi-Fi is enabled and airplane mode is off.\nSelect the fictional Campus-Demo network.\nIf connection fails, forget the saved network and try connecting again.\nIf the problem remains, check the service status before preparing a ticket."
+    }
+}

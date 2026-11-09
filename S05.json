@@ -1,0 +1,27 @@
+{
+    "scenario": "S05",
+    "message": "My Wi-Fi password does not work.",
+    "trace": [
+        {
+            "node": "read_request",
+            "state": {
+                "message": "My Wi-Fi password does not work.",
+                "category": "both",
+                "reply": ""
+            }
+        },
+        {
+            "node": "clarify_problem",
+            "state": {
+                "message": "My Wi-Fi password does not work.",
+                "category": "both",
+                "reply": "Which problem do you want to solve first: Wi-Fi connection or password recovery?"
+            }
+        }
+    ],
+    "final_state": {
+        "message": "My Wi-Fi password does not work.",
+        "category": "both",
+        "reply": "Which problem do you want to solve first: Wi-Fi connection or password recovery?"
+    }
+}

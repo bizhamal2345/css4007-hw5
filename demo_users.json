@@ -1,0 +1,11 @@
+{
+  "description": "Invented test identifiers only. This file is not a memory store. No language preference is supplied: the application must learn it from a message and persist it.",
+  "users": [
+    {
+      "user_id": "demo-user-a"
+    },
+    {
+      "user_id": "demo-user-b"
+    }
+  ]
+}

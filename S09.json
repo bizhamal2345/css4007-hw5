@@ -1,0 +1,72 @@
+{
+    "scenario": "S09",
+    "status_profile": "normal",
+    "user_id": "demo-user-a",
+    "thread_id": "s09",
+    "trace": [
+        {
+            "node": "input",
+            "message": "Prepare a support ticket."
+        },
+        {
+            "node": "chatbot",
+            "answer": "Could you please provide the problem you are experiencing and the steps you have already tried? This information is needed to prepare the support ticket.",
+            "tool_calls": []
+        },
+        {
+            "node": "input",
+            "message": "The issue is Wi-Fi. I enabled it and tried reconnecting, but it still fails."
+        },
+        {
+            "node": "chatbot",
+            "answer": "",
+            "tool_calls": [
+                {
+                    "name": "check_service_status",
+                    "args": {
+                        "service": "wifi"
+                    },
+                    "id": "call_lOCBmsat0MwCyqaf8e9Iwwe5",
+                    "type": "tool_call"
+                }
+            ]
+        },
+        {
+            "node": "tools",
+            "tool": "check_service_status",
+            "result": "Status: operational\nMessage: The demo Wi-Fi service has no reported outage."
+        },
+        {
+            "node": "chatbot",
+            "answer": "",
+            "tool_calls": [
+                {
+                    "name": "prepare_ticket",
+                    "args": {
+                        "problem": "Wi-Fi issue: enabled Wi-Fi and tried reconnecting, but it still fails.",
+                        "steps_tried": [
+                            "Enabled Wi-Fi",
+                            "Tried reconnecting"
+                        ]
+                    },
+                    "id": "call_GHouhDhaXVa6muq0t4jDeOnQ",
+                    "type": "tool_call"
+                }
+            ]
+        },
+        {
+            "node": "tools",
+            "tool": "prepare_ticket",
+            "result": "Ticket draft saved: outputs/tickets/T-8635622c.json"
+        },
+        {
+            "node": "chatbot",
+            "answer": "I have prepared a support ticket for your Wi-Fi issue where you enabled Wi-Fi and tried reconnecting but it still fails. If you need further assistance, please let me know.",
+            "tool_calls": []
+        }
+    ],
+    "ticket_files": [
+        "outputs/tickets/T-8635622c.json"
+    ],
+    "loop_limit_reached": false
+}

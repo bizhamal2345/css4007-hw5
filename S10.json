@@ -1,0 +1,41 @@
+{
+    "scenario": "S10",
+    "user_id": "demo-user-a",
+    "thread_id": "s10",
+    "memory_source": "conversation_memory",
+    "messages": [
+        {
+            "type": "human",
+            "content": "I cannot connect to Wi-Fi. I enabled it and forgot the saved network, but reconnecting failed."
+        },
+        {
+            "type": "ai",
+            "content": ""
+        },
+        {
+            "type": "tool",
+            "content": "Status: unknown\nMessage: The demo Wi-Fi status source is unavailable."
+        },
+        {
+            "type": "ai",
+            "content": "The current status of the Wi-Fi service is unknown, so I cannot prepare a ticket for the Wi-Fi connection issue at this moment. Meanwhile, if you want, I can provide instructions on troubleshooting Wi-Fi connection problems. Would you like that?"
+        },
+        {
+            "type": "human",
+            "content": "Which steps did I already try?"
+        },
+        {
+            "type": "ai",
+            "content": "You mentioned that you enabled Wi-Fi and forgot the saved network, but reconnecting still failed. These are the steps you have already tried. If you want, I can help you with further instructions or prepare a ticket once the Wi-Fi service status is confirmed."
+        },
+        {
+            "type": "human",
+            "content": "Which steps did I already try?"
+        },
+        {
+            "type": "ai",
+            "content": "You have tried enabling Wi-Fi and forgetting the saved network, but reconnecting still failed. These are the steps you have already attempted."
+        }
+    ],
+    "final_answer": "You have tried enabling Wi-Fi and forgetting the saved network, but reconnecting still failed. These are the steps you have already attempted."
+}

@@ -1,0 +1,35 @@
+{
+    "scenario": "S13",
+    "status_profile": "normal",
+    "user_a": {
+        "user_id": "demo-user-a",
+        "thread_id": "isolation-a",
+        "language": "Kazakh",
+        "messages": [
+            {
+                "type": "human",
+                "content": "I have a Wi-Fi problem."
+            },
+            {
+                "type": "ai",
+                "content": "Алдыңғы Wi-Fi мәселеңіз туралы ақпарат тіркелмеген. Wi-Fi мәселеңізді нақтылау үшін, қандай қиындықтар туындап жатқанын айта аласыз ба? Мысалы, қосыла алмай жатырсыз ба, парольмен байланысты қиындық па, әлде басқа мәселе ме?"
+            }
+        ]
+    },
+    "user_b": {
+        "user_id": "demo-user-b",
+        "thread_id": "isolation-b",
+        "language": null,
+        "messages": [
+            {
+                "type": "human",
+                "content": "Have I told you a preferred language or a previous problem?"
+            },
+            {
+                "type": "ai",
+                "content": "You have not told me a preferred language or a previous problem in this conversation. How can I assist you today?"
+            }
+        ]
+    },
+    "memory_isolated": true
+}

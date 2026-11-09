@@ -1,0 +1,38 @@
+{
+    "scenario": "S08",
+    "status_profile": "status_unavailable",
+    "user_id": "demo-user-a",
+    "thread_id": "s08",
+    "trace": [
+        {
+            "node": "input",
+            "message": "Check whether Wi-Fi is down. If it is operating, prepare a ticket. I already enabled Wi-Fi and reconnected, with no success."
+        },
+        {
+            "node": "chatbot",
+            "answer": "",
+            "tool_calls": [
+                {
+                    "name": "check_service_status",
+                    "args": {
+                        "service": "wifi"
+                    },
+                    "id": "call_fFn9RyRbFw9Nvsyv7dDMfP6W",
+                    "type": "tool_call"
+                }
+            ]
+        },
+        {
+            "node": "tools",
+            "tool": "check_service_status",
+            "result": "Status: unknown\nMessage: The demo Wi-Fi status source is unavailable."
+        },
+        {
+            "node": "chatbot",
+            "answer": "The current status of the Wi-Fi service is unknown, so I cannot confirm if it is down or operating. Would you like me to assist you with anything else?",
+            "tool_calls": []
+        }
+    ],
+    "ticket_files": [],
+    "loop_limit_reached": false
+}

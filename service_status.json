@@ -1,0 +1,45 @@
+{
+  "description": "Fictional snapshots selected by the demo runner, not live university status. Do not change snapshots during a conversation unless the scenario asks you to.",
+  "profiles": {
+    "normal": {
+      "wifi": {
+        "status": "operational",
+        "message": "The demo Wi-Fi service has no reported outage."
+      },
+      "account_recovery": {
+        "status": "operational",
+        "message": "The demo account-recovery service is operating."
+      }
+    },
+    "wifi_outage": {
+      "wifi": {
+        "status": "outage",
+        "message": "The demo Wi-Fi service is unavailable across campus. The fixture gives no repair time."
+      },
+      "account_recovery": {
+        "status": "operational",
+        "message": "The demo account-recovery service is operating."
+      }
+    },
+    "recovery_outage": {
+      "wifi": {
+        "status": "operational",
+        "message": "The demo Wi-Fi service has no reported outage."
+      },
+      "account_recovery": {
+        "status": "outage",
+        "message": "The demo account-recovery service is unavailable. The fixture gives no repair time."
+      }
+    },
+    "status_unavailable": {
+      "wifi": {
+        "status": "unknown",
+        "message": "The demo Wi-Fi status source is unavailable."
+      },
+      "account_recovery": {
+        "status": "unknown",
+        "message": "The demo account-recovery status source is unavailable."
+      }
+    }
+  }
+}

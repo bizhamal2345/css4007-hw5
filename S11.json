@@ -1,0 +1,27 @@
+{
+    "scenario": "S11",
+    "user_id": "demo-user-a",
+    "thread_id": "restart-a",
+    "language": "Kazakh",
+    "memory_source": "SQLite",
+    "start_command": "python s11_memory.py start",
+    "restart_command": "python s11_memory.py resume",
+    "messages": [
+        {
+            "type": "human",
+            "content": "Please remember that I prefer replies in Kazakh. My issue is Wi-Fi. I enabled it and tried reconnecting, but it still fails."
+        },
+        {
+            "type": "ai",
+            "content": "Wi-Fi қосылғанына қарамастан қосыла алмай жатқаныңызға өкінішті. Wi-Fi желісіне қосылу үшін қандай қадамдарды орындағаныңызды және қандай қате хабарламалар шыққанын айта аласыз ба? Сонымен қатар, университеттің Wi-Fi желісіне қосылу нұсқауларын қарап шығайын ба?"
+        },
+        {
+            "type": "human",
+            "content": "Which problem and steps did we discuss?"
+        },
+        {
+            "type": "ai",
+            "content": "Біз Wi-Fi қосылу мәселесін талқылап жатырмыз. Сіз Wi-Fi-ды қосып, қайта қосылуға тырысқаныңызды айттыңыз, бірақ қосыла алмай жатырсыз. Қазір біз сіздің Wi-Fi желісіне қосылу үшін қандай қадамдарды орындағаныңызды және қандай қате хабарламалар шыққанын анықтап жатырмыз. Сонымен қатар, университеттің Wi-Fi желісіне қосылу нұсқауларын қарап шығуға дайынмын."
+        }
+    ]
+}
